@@ -12,9 +12,9 @@ Perbedaan secara fungsional adalah stateful widget bisa mengubah reference state
 <code>FloatingActionButton</code> Untuk membuat button yang berada di paling atas dari UI\
 <code>Row</code> membuat element dalam 1 baris\
 <code>Column</code> membuat element dalam 1 column\
-<code>Icon</code> Memberi icon ke sebuah element
+<code>Icon</code> Memberi icon ke sebuah element\
 <code>Padding</code> Untuk mengatur padding dari element\
-<code>Center</code> Mengantur alignment menjadi center\
+<code>Center</code> Mengantur alignment menjadi center
 
 ## Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
 
