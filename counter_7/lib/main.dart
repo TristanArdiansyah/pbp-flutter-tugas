@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:counter_7/form.dart';
+import 'package:counter_7/showdata.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -7,22 +8,22 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    title: 'Flutter Demo',
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
+    ),
+    home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  const MyHomePage({super.key});
+
+  final String title = 'Flutter Demo Home Page';
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -56,7 +57,44 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Program Counter"),
+          title: Text("counter_7"),
+        ),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              // Menambahkan clickable menu
+              ListTile(
+                title: const Text('counter_7'),
+                onTap: () {
+                  // Route menu ke halaman utama
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyHomePage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Tambah Budget'),
+                onTap: () {
+                  // Route menu ke halaman form
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyBudgetFormPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Data Budget'),
+                onTap: () {
+                  // Route menu ke halaman form
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyBudgetPage()),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
         body: Center(
           child: Column(
