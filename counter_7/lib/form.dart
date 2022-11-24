@@ -1,5 +1,6 @@
 import 'package:counter_7/main.dart';
 import 'package:counter_7/showdata.dart';
+import 'package:counter_7/watchlistPage.dart';
 import 'package:flutter/material.dart';
 
 class BudgetList {
@@ -65,6 +66,16 @@ class _MyBudgetFormPageState extends State<MyBudgetFormPage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const MyBudgetPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('My Watchlist'),
+                onTap: () {
+                  // Route menu ke halaman form
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const WatchListPage()),
                   );
                 },
               ),

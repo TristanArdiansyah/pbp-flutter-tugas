@@ -71,3 +71,42 @@ Dalam mengganti halaman dari aplikasi flutter, Navigator memiliki dua metode dal
 4. Membuat dua class untuk input dan list untuk menyimpan barang
 5. Mengimplementasikan event ketika button simpan ditekan, untuk menyimpan input kedalam list Budget yang telah dibuat
 6. Mengimplementasikan ListTile builder untuk menampilkan seluruh data pada showdata.dart
+
+# Flutter App : Integrasi Web Service pada Flutter
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+Kita dapat melakukan pengambilan data JSON tanpa membuat model (secara langsung kedalam page). Namun data json tersebut tidak dapat kita akses menjadi object dari suatu class sehingga  membuat penyimpanan dan pengambilannya tidak efisien.
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+
+<code>FutureBuilder</code> Untuk create data ketika json di parse\
+<code>Flexible</code> Widget sebagai container untuk menghindari text overflow\
+<code>ListView</code> List widget\
+<code>SizedBox</code> Poisitioning untuk box\
+<code>BoxDecoration</code> Styling box container\
+<code>MaterialPageRoute</code> change screen\
+<code>Container</code> Menampung widget\
+<code>Text</code> Membuat text label\
+<code>TextStyle</code> Styling text untuk text\
+<code>Column</code> Container merentang kolom\
+<code>ElevatedButton</code> Untuk membuat button di bawah
+
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+
+1. Tambahkan dependencies untuk http pada <code>pubspec.yaml</code>
+2. Buat sebuah model class untuk data yang akan di GET
+3. Membuat function yang akan melakukan http request get kepada suatu address
+4. Menyimpan data yang di GET sebelumnya kepada model yang telah dibuat
+5. Setelah sukses melakukan get selanjutnya dapat diproses menjadi widget-widget yang dibutuhkan dengan memanfaatkan <code>FutureBuilder</code> 
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+
+1. Menambahkan dependencies untuk http pada file <code>pubspec.yaml</code>
+2. Membuat sebuah model class <code>WatchList</code> untuk data yang akan di GET
+3. Membuat function pada <code>fetchAPI.dart</code> bernama <code>fetchToDo()</code> yang akan melakukan http request get kepada json yang terdapat pada address json tugas 3.
+4. Menyimpan data yang di GET sebelumnya kepada model yang telah dibuat
+5. Membuat widget-widget yang dibutuhkan dengan memanfaatkan <code>FutureBuilder</code> dan berbagai widget lainnya sesuai dengan fungsionalitas program
+6. Mengisi data pada widget-widget yang ada dengan data yang telah disimpan.
+7. Data yang ada dipanggil dengan item builder dan membentuk komponen menyerupai card
+8. Meembuat dan menambahkan routing kepada halaman detail page masing-masing item data
